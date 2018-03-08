@@ -1,0 +1,9 @@
+{
+  "name": "webpack-wasm-skeleton",
+  "version": "0.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/mizdra/webpack-wasm-skeleton.git",
+  "author": "mizdra <pp.mizdra@gmail.com>",
+  "license": "MIT",
+  "private": true
+}
