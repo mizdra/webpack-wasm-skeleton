@@ -1,0 +1,10 @@
+[package]
+name = "webpack-wasm-skeleton"
+version = "0.1.0"
+authors = ["mizdra <pp.mizdra@gmail.com>"]
+
+[lib]
+path = "src/wasm/lib.rs"
+crate-type = ["cdylib"]
+
+[dependencies]
