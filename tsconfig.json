@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    /* Basic Options */
+    // "outDir": "./dist",
+    "target": "es5",
+    "lib": ["esnext", "dom"],
+    "declaration": false,
+
+    /* Module Options */
+    "module": "esnext",
+    "moduleResolution": "node",
+    "baseUrl": ".", // This must be specified if "paths" is.
+    "paths": {
+      "@wasm": ["./target/wasm32-unknown-unknown/release/webpack_wasm_skeleton.wasm"] // This mapping is relative to "baseUrl"
+    },
+
+    /* Strict Type-Checking Options */
+    "strict": true,
+
+    /* Helper Options */
+    "noEmitHelpers": true,
+    "importHelpers": true,
+
+    /* Debug Options */
+    "sourceMap": true,
+    "pretty": true,
+    "locale": "ja"
+  }
+  // "include": ["./src/**/*"],
+  // "exclude": ["./node_modules"]
+}

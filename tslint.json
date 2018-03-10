@@ -1,0 +1,22 @@
+{
+  "defaultSeverity": "error",
+  "extends": [
+    "tslint-config-standard"
+  ],
+  "rules": {
+    "max-line-length": false,
+    "no-console": {"severity": "warning"},
+    "max-classes-per-file": false,
+    "object-literal-sort-keys": false,
+    "no-unused-variable": true,
+    "interface-name": false,
+    "curly": [true, "ignore-same-line"],
+    "member-access": [true, "no-public"],
+    "no-submodule-imports": false,
+    "quotemark": [true, "single", "jsx-double"],
+    "interface-over-type-literal": false,
+    "ordered-imports": true,
+    "indent": [true, "spaces", 2],
+    "trailing-comma": [true, {"multiline": "always", "singleline": "never"}]
+  }
+}

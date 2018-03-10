@@ -1,15 +1,17 @@
 const { resolve } = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin')
 
 const rootPath = resolve(__dirname, '.')
-const srcPath  = resolve(rootPath, './src')
+const srcPath = resolve(rootPath, './src')
 const distPath = resolve(rootPath, './dist')
-const wasmDistPath  = resolve(rootPath, './target')
+const wasmDistPath = resolve(rootPath, './target')
 
 module.exports = {
   entry: {
     app: [
-      resolve(srcPath, './index.js'),
+      'tslib',
+      resolve(srcPath, './index.ts'),
     ],
   },
   output: {
@@ -19,14 +21,20 @@ module.exports = {
 
   module: {
     rules: [
+      { test: /\.ts$/, loader: 'ts-loader' },
     ],
   },
 
   resolve: {
-    extensions: ['.js'],
+    extensions: ['.js', '.ts'],
     alias: {
       '@wasm$': resolve(wasmDistPath, 'wasm32-unknown-unknown/release/webpack_wasm_skeleton.wasm'),
     },
+    plugins: [
+      new TsconfigPathsPlugin({
+        configFile: resolve(rootPath, './tsconfig.json'),
+      }),
+    ],
   },
 
   plugins: [
