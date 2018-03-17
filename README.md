@@ -3,7 +3,7 @@ WebAssemblyの素振り環境.
 
 ## Requirements
 Rust 及び `wasm32-unknown-unknown` ターゲットを有効化する必要があります.
-また, `yarn run watch:wasm` の実行に `cargo-watch` のインストールが必要です.
+また `cargo-watch`, `wasm-bindgen-cli` のインストールが必要です.
 
 
 ```bash
@@ -26,8 +26,9 @@ $ rustup update
 $ rustup target add wasm32-unknown-unknown --toolchain nightly
 
 
-# cargo-watch のインストール
+# `cargo-watch`, `wasm-bindgen-cli` のインストール
 $ cargo install cargo-watch
+$ cargo install wasm-bindgen-cli
 ```
 
 ## Usage
@@ -35,9 +36,7 @@ $ cargo install cargo-watch
 1. `wget -O - https://github.com/mizdra/webpack-wasm-skeleton/archive/master.tar.gz | tar xzvf - --strip=1 --exclude LICENSE`
 1. `npx npm-check-updates -a`
 1. `yarn install --force`
-1. `yarn run build`
-1. `yarn run dev:wasm`
-1. `yarn run dev:js`
+1. `yarn run dev`
 
 
 ## Option
