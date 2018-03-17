@@ -1,5 +1,6 @@
-import('@wasm')
+import('./wasm/lib')
   .then(module => {
-    const { memory, rust_eh_personality, add } = module
+    const { add, greet } = module
     console.log(add(1, 2))
+    greet('mizdra')
   })

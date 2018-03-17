@@ -1,11 +1,9 @@
 const { resolve } = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin')
 
 const rootPath = resolve(__dirname, '.')
 const srcPath = resolve(rootPath, './src')
 const distPath = resolve(rootPath, './dist')
-const wasmDistPath = resolve(rootPath, './target')
 
 module.exports = {
   entry: {
@@ -26,15 +24,7 @@ module.exports = {
   },
 
   resolve: {
-    extensions: ['.js', '.ts'],
-    alias: {
-      '@wasm$': resolve(wasmDistPath, 'wasm32-unknown-unknown/release/webpack_wasm_skeleton.wasm'),
-    },
-    plugins: [
-      new TsconfigPathsPlugin({
-        configFile: resolve(rootPath, './tsconfig.json'),
-      }),
-    ],
+    extensions: ['.js', '.ts', '.wasm'],
   },
 
   plugins: [

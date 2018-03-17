@@ -9,10 +9,6 @@
     /* Module Options */
     "module": "esnext",
     "moduleResolution": "node",
-    "baseUrl": ".", // This must be specified if "paths" is.
-    "paths": {
-      "@wasm": ["./target/wasm32-unknown-unknown/release/webpack_wasm_skeleton.wasm"] // This mapping is relative to "baseUrl"
-    },
 
     /* Strict Type-Checking Options */
     "strict": true,
